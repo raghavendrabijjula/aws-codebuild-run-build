@@ -297,15 +297,15 @@ function buildSdk() {
   });
 
   // check if environment variable exists for the container credential provider
-  if (
-    !process.env.AWS_CONTAINER_CREDENTIALS_FULL_URI &&
-    !process.env.AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
-  ) {
-    assert(
-      codeBuild.config.credentials && cloudWatchLogs.config.credentials,
-      "No credentials. Try adding @aws-actions/configure-aws-credentials earlier in your job to set up AWS credentials."
-    );
-  }
+ // if (
+ //   !process.env.AWS_CONTAINER_CREDENTIALS_FULL_URI &&
+ //   !process.env.AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
+ // ) {
+ //   assert(
+ //     codeBuild.config.credentials && cloudWatchLogs.config.credentials,
+ //     "No credentials. Try adding @aws-actions/configure-aws-credentials earlier in your job to set up AWS credentials."
+ //   );
+ // }
 
   return { codeBuild, cloudWatchLogs };
 }
